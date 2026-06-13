@@ -151,7 +151,7 @@ int main(int argc, char* argv[]) {
 
     // ---- 4. Write results to output file ----
     string base_name = GetBaseName(filename);
-    string out_filename = "radix_sort_step_" + GetTimestampFile() + "_" + base_name + ".txt";
+    string out_filename = "radix_sort_result_" + GetTimestampFile() + "_" + base_name + ".txt";
     ofstream out(out_filename);
     if (!out.is_open()) {
         cerr << "Failed to create output file." << endl;
@@ -179,7 +179,7 @@ int main(int argc, char* argv[]) {
     cout << "Results written to " << out_filename << "\n";
 
     // ---- 5. Write sorted CSV ----
-    string csv_filename = "sorted_radix_dataset_" + to_string(dataset.size()) + ".csv";
+    string csv_filename = "radix_sorted_dataset_" + to_string(dataset.size()) + ".csv";
     WriteSortedCSV(dataset, csv_filename);
 
     return 0;
